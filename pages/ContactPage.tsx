@@ -47,7 +47,7 @@ const ContactPage: React.FC = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6 bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl">
+      <form onSubmit={handleSubmit} className="space-y-6 bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl" netlify>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Nome</label>
           <input

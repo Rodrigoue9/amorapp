@@ -10,24 +10,25 @@ export const VALENTINES_DAY_PRODUCT: Product = {
     'image/ss3.png',
     'image/ss4.png',
   ],
-  description: 'Surpreenda seu amor com um site de relacionamento exclusivo, criado especialmente para casais apaixonados. Este site é o presente perfeito para celebrar o Dia dos Namorados, permitindo que vocês compartilhem momentos especiais, fotos e memórias de forma única e personalizada.',
-  features: [
-    'Contador de Dias de namoro.',
-    'Ambiente controlado por senha de acesso(pode ser modificado a qualquer momento).',
-    'espaços para adicionar textos e menções para seu parceiro(a).',
-    'lembrete de quantos meses juntos.',
-    'Espaço para fotos.',
-    'Ambiente de administrador.',
-  ],
-  benefits: 'Suporte via WhatsApp para dúvidas e personalizações. Este site é mais do que um presente, é uma forma de eternizar momentos especiais e fortalecer o vínculo entre vocês. Ideal para casais que desejam celebrar seu amor de maneira inovadora e significativa.',
+description: 'Surpreenda seu amor com um site de relacionamento exclusivo, criado especialmente para casais apaixonados. Este site é o presente perfeito para celebrar o Dia dos Namorados, permitindo que vocês compartilhem momentos especiais, fotos e memórias de forma única e personalizada.',
+features: [
+  'Contador de Dias de namoro.',
+  'Ambiente controlado por senha de acesso (pode ser modificado a qualquer momento).',
+  'Espaços para adicionar textos e mensagens para o seu parceiro(a).',
+  'Lembrete de quantos meses juntos.',
+  'Espaço para fotos.',
+  'Ambiente de administrador.',
+],
+benefits: 'Suporte via WhatsApp para dúvidas e personalizações. Este site é mais do que um presente, é uma forma de eternizar momentos especiais e fortalecer o vínculo entre vocês. Ideal para casais que desejam celebrar seu amor de maneira inovadora e significativa.',
 };
 
 export const CUSTOMER_REVIEWS: CustomerReview[] = [
-  { id: 'r1', name: 'Juliana S.', rating: 5, comment: 'Maravilhoso! Meu namorado amou colocar nossas fotos, foi um presente simples mas com muita emoção.' },
+  { id: 'r1', name: 'Juliana S.', rating: 5, comment: 'Maravilhoso! Meu namorado amou colocar nossas fotos, foi um presente simples, mas cheio de emoção.' },
   { id: 'r2', name: 'Ricardo P.', rating: 5, comment: 'Produto de excelente qualidade e design sofisticado. A esposa adorou o presente, superou as expectativas!' },
-  { id: 'r3', name: 'Fernanda L.', rating: 4, comment: 'Lindo e perfeito para aquele momento de "Oque posso dar de presente?"' },
+  { id: 'r3', name: 'Fernanda L.', rating: 4, comment: 'Lindo e perfeito para aquele momento de "O que posso dar de presente?"' },
   { id: 'r4', name: 'Carlos M.', rating: 5, comment: 'Presente perfeito para o Dia dos Namorados. Minha noiva ficou encantada com os detalhes.' },
 ];
+
 
 // Target date is June 12, 2025, 23:59:59
 // JavaScript months are 0-indexed, so June is 5.

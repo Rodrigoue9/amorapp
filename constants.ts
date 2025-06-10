@@ -5,10 +5,10 @@ export const VALENTINES_DAY_PRODUCT: Product = {
   name: 'Site de relacionamento para casal',
   price: 'R$ 15,00', // Preço atualizado
   imageUrls: [
-    '/image/ss1.png',
-    '/image/ss2.png',
-    '/image/ss3.png',
-    '/image/ss4.png',
+    'image/ss1.png',
+    'image/ss2.png',
+    'image/ss3.png',
+    'image/ss4.png',
   ],
   description: 'Surpreenda seu amor com um site de relacionamento exclusivo, criado especialmente para casais apaixonados. Este site é o presente perfeito para celebrar o Dia dos Namorados, permitindo que vocês compartilhem momentos especiais, fotos e memórias de forma única e personalizada.',
   features: [

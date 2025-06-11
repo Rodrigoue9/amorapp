@@ -6,10 +6,13 @@ import AnimatedButton from '../components/AnimatedButton';
 import ReviewCard from '../components/ReviewCard';
 
 const AnimatedSection: React.FC<{children: React.ReactNode, delay?: number, className?: string}> = ({children, delay = 0, className = ''}) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(delay === 0); // If delay is 0, start visible
+
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
+    if (delay > 0) { // Only set a timer if there's an actual delay requested
+      const timer = setTimeout(() => setIsVisible(true), delay);
+      return () => clearTimeout(timer);
+    }
   }, [delay]);
 
   return (
@@ -51,7 +54,7 @@ const ProductDetailsPage: React.FC = () => {
 
   return (
     <div className="space-y-12">
-      <AnimatedSection delay={100}>
+      <AnimatedSection delay={0}>
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           <div className="lg:w-1/2 w-full">
             {/* Image Carousel */}
@@ -145,7 +148,7 @@ const ProductDetailsPage: React.FC = () => {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection delay={300}>
+      <AnimatedSection delay={100}>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">Avaliações de Clientes</h2>
         {CUSTOMER_REVIEWS.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

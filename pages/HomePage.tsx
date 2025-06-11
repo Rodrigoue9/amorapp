@@ -7,10 +7,13 @@ import DiscountModal from '../components/DiscountModal';
 import { VALENTINES_DAY_PRODUCT } from '../constants';
 
 const AnimatedElement: React.FC<{children: React.ReactNode, delay?: number, className?: string}> = ({children, delay = 0, className = ''}) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(delay === 0); // If delay is 0, start visible
+
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
+    if (delay > 0) { // Only set a timer if there's an actual delay requested
+      const timer = setTimeout(() => setIsVisible(true), delay);
+      return () => clearTimeout(timer);
+    }
   }, [delay]);
 
   return (
@@ -45,17 +48,17 @@ const HomePage: React.FC = () => {
     <div className="space-y-16">
       {/* Hero Section */}
       <section className="text-center py-12 md:py-20 bg-gray-900 rounded-xl shadow-2xl overflow-hidden relative">
-      
+        
         <div className="relative z-10">
-          <AnimatedElement delay={100}>
+          <AnimatedElement delay={0}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
-              <span className="block text-white">Presente exclusivo</span>
+              <span className="block text-white">Presentes Exclusivos</span>
               <span className="block text-cyan-400">para o Seu Amor</span>
             </h1>
           </AnimatedElement>
-          <AnimatedElement delay={300}>
+          <AnimatedElement delay={50}>
             <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-              Aproveite o Dia dos Namorados com nosso presente perfeito, criado para celebrar momentos inesquecíveis. e relembrar datas especiais.
+              Aproveite o Dia dos Namorados com nosso presente perfeito, criado para celebrar momentos inesquecíveis.
             </p>
           </AnimatedElement>
         </div>
@@ -63,12 +66,12 @@ const HomePage: React.FC = () => {
 
       {/* Product Highlight Section */}
       <section className="py-12">
-        <AnimatedElement delay={500} className="text-center">
-           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">Site para casal</h2>
-           <p className="text-cyan-400 mb-10 text-lg">Confira as informações do site abaixo.</p>
+        <AnimatedElement delay={200} className="text-center">
+           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">Nosso Presente Destaque</h2>
+           <p className="text-cyan-400 mb-10 text-lg">Feito para encantar e surpreender.</p>
         </AnimatedElement>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 bg-gray-800 p-8 rounded-xl shadow-xl">
-          <AnimatedElement delay={700} className="md:w-1/2 flex justify-center">
+          <AnimatedElement delay={250} className="md:w-1/2 flex justify-center">
             <img 
               src={VALENTINES_DAY_PRODUCT.imageUrls[0]} // Use the first image for highlight
               alt={VALENTINES_DAY_PRODUCT.name} 
@@ -76,16 +79,16 @@ const HomePage: React.FC = () => {
             />
           </AnimatedElement>
           <div className="md:w-1/2 text-center md:text-left">
-            <AnimatedElement delay={900}>
+            <AnimatedElement delay={300}>
               <h3 className="text-2xl sm:text-3xl font-semibold text-cyan-300 mb-3">{VALENTINES_DAY_PRODUCT.name}</h3>
             </AnimatedElement>
-            <AnimatedElement delay={1100}>
-              <p className="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">{VALENTINES_DAY_PRODUCT.description.substring(0, 350)}...</p>
+            <AnimatedElement delay={350}>
+              <p className="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">{VALENTINES_DAY_PRODUCT.description.substring(0, 275)}...</p>
             </AnimatedElement>
-            <AnimatedElement delay={1300}>
+            <AnimatedElement delay={400}>
               <p className="text-3xl sm:text-4xl font-bold text-white mb-6">{VALENTINES_DAY_PRODUCT.price}</p>
             </AnimatedElement>
-            <AnimatedElement delay={1500}>
+            <AnimatedElement delay={450}>
               <AnimatedButton 
                 variant="primary" 
                 size="lg"
@@ -99,7 +102,7 @@ const HomePage: React.FC = () => {
       </section>
       
       {/* Countdown Timer Section */}
-      <AnimatedElement delay={1700}>
+      <AnimatedElement delay={500}>
         <CountdownTimer />
       </AnimatedElement>
 
